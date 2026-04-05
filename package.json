@@ -1,0 +1,51 @@
+{
+  "name": "flun-webauthn-browser",
+  "version": "1.0.0",
+  "description": "WebAuthn 前端库,提供简单易用的接口来处理 WebAuthn 认证流程,支持 Passkeys 和 FIDO2 标准;",
+  "keywords": [
+    "typescript",
+    "webauthn",
+    "passkeys",
+    "fido",
+    "umd"
+  ],
+  "author": "flun <cn@flun.top>",
+  "types": "./esm/index.d.ts",
+  "files": [
+    "dist",
+    "esm",
+    "script",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flunGit/flun-webauthn-browser.git"
+  },
+  "homepage": "https://www.npmjs.com/package/flun-webauthn-browser#readme",
+  "bugs": {
+    "url": "https://github.com/flunGit/flun-webauthn-browser/issues"
+  },
+  "license": "ISC",
+  "main": "./script/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./script/index.js"
+    }
+  },
+  "unpkg": "dist/index.js",
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0"
+  },
+  "_generatedBy": "dnt@dev",
+  "readmeFilename": "README.md"
+}
