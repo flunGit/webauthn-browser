@@ -1,9 +1,9 @@
 {
   "name": "flun-webauthn-browser",
   "version": "1.0.0",
-  "description": "WebAuthn 前端库,提供简单易用的接口来处理 WebAuthn 认证流程,支持 Passkeys 和 FIDO2 标准;",
+  "decjsion": "WebAuthn 前端库,提供简单易用的接口来处理 WebAuthn 认证流程,支持 Passkeys 和 FIDO2 标准;",
   "keywords": [
-    "typescript",
+    "typecjs",
     "webauthn",
     "passkeys",
     "fido",
@@ -14,7 +14,7 @@
   "files": [
     "dist",
     "esm",
-    "script",
+    "cjs",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -29,12 +29,12 @@
     "url": "https://github.com/flunGit/flun-webauthn-browser/issues"
   },
   "license": "ISC",
-  "main": "./script/index.js",
+  "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "exports": {
     ".": {
       "import": "./esm/index.js",
-      "require": "./script/index.js"
+      "require": "./cjs/index.js"
     }
   },
   "unpkg": "dist/index.js",
