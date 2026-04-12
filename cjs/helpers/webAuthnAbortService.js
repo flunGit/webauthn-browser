@@ -1,10 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebAuthnAbortService = void 0;
+
 class BaseWebAuthnAbortService {
-    constructor() {
-        Object.defineProperty(this, "controller", { enumerable: true, configurable: true, writable: true, value: void 0 });
-    }
+    constructor() { this.controller = void 0 }
+
     createNewAbortSignal() {
         // 中止任何现有的 navigator.credentials.create() 或 navigator.credentials.get() 调用
         if (this.controller) {
@@ -15,6 +13,7 @@ class BaseWebAuthnAbortService {
         this.controller = newController;
         return newController.signal;
     }
+
     cancelCeremony() {
         if (this.controller) {
             const abortError = new Error('手动取消现有的 WebAuthn API 调用');
@@ -22,10 +21,13 @@ class BaseWebAuthnAbortService {
         }
     }
 }
+
 /**
- * 服务单例,用于帮助确保同一时间只有一个 WebAuthn 仪式处于活动状态;
+ * 服务单例,用于帮助确保同一时间只有一个 WebAuthn 仪式处于活动状态；
  *
- * **flun-webauthn-browser** 的使用者通常不需要使用此服务，但它可以帮助例如
- * 使用客户端路由的项目开发者更好地控制其用户体验以响应路由导航事件;
+ * **flun-webauthn-browser** 的使用者通常不需要使用此服务,但它可以帮助例如
+ * 使用客户端路由的项目开发者更好地控制其用户体验以响应路由导航事件；
  */
-exports.WebAuthnAbortService = new BaseWebAuthnAbortService();
+const WebAuthnAbortService = new BaseWebAuthnAbortService();
+
+module.exports = { WebAuthnAbortService };

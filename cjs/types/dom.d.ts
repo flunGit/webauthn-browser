@@ -300,4 +300,3 @@ export type KeyType = "private" | "public" | "secret";
 export type HashAlgorithmIdentifier = AlgorithmIdentifier;
 export type NamedCurve = string;
 export type BigInteger = Uint8Array;
-//# sourceMappingURL=dom.d.ts.map

@@ -43,6 +43,16 @@
     "node": ">=20.0.0",
     "npm": ">=9.0.0"
   },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "esm/index.d.ts"
+      ],
+      "helpers": [
+        "esm/helpers/index.d.ts"
+      ]
+    }
+  },
   "devDependencies": {
     "@types/node": "^20.9.0"
   },

@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.isValidDomain = isValidDomain;
+
 /**
  * 一个简单的测试，用于判断主机名是否为格式正确的域名
  *
@@ -14,3 +13,5 @@ function isValidDomain(hostname) {
         // 将 localhost 视为有效,因为它在安全上下文方面是没问题的,支持 punycode (ACE) 或 ASCII 标签和域名
         hostname === 'localhost' || /^((xn--[a-z0-9-]+|[a-z0-9]+(-[a-z0-9]+)*)\.)+([a-z]{2,}|xn--[a-z0-9-]+)$/i.test(hostname));
 }
+
+module.exports = { isValidDomain };

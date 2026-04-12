@@ -236,4 +236,3 @@ export type AttestationFormat = 'fido-u2f' | 'packed' | 'android-safetynet' | 'a
  * https://github.com/denoland/std/blob/b5a5fe4f96b91c1fe8dba5cc0270092dd11d3287/bytes/_types.ts#L11
  */
 export type Uint8Array_ = ReturnType<Uint8Array['slice']>;
-//# sourceMappingURL=index.d.ts.map
