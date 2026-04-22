@@ -12,4 +12,4 @@ const browserSupportsWebAuthn = () => {
         typeof globalThis.PublicKeyCredential === 'function');
 }
 
-export { browserSupportsWebAuthn, _browserSupportsWebAuthnInternals };
+export { _browserSupportsWebAuthnInternals, browserSupportsWebAuthn };

@@ -25,4 +25,4 @@ const browserSupportsWebAuthnAutofill = () => {
     );
 }
 
-export { browserSupportsWebAuthnAutofill, _browserSupportsWebAuthnAutofillInternals };
+export { _browserSupportsWebAuthnAutofillInternals, browserSupportsWebAuthnAutofill };

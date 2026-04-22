@@ -1,5 +1,16 @@
-import { WebAuthnError } from './webAuthnError.js';
 import type { AuthenticatorAttachment, PublicKeyCredentialDescriptor, PublicKeyCredentialDescriptorJSON } from '../types/index.js';
+import { base64URLStringToBuffer } from './base64URLStringToBuffer.js';
+import { _browserSupportsWebAuthnInternals, browserSupportsWebAuthn } from './browserSupportsWebAuthn.js';
+import { _browserSupportsWebAuthnAutofillInternals, browserSupportsWebAuthnAutofill } from './browserSupportsWebAuthnAutofill.js';
+import { bufferToBase64URLString } from './bufferToBase64URLString.js';
+import { identifyAuthenticationError } from './identifyAuthenticationError.js';
+import { identifyRegistrationError } from './identifyRegistrationError.js';
+import { isValidDomain } from './isValidDomain.js';
+import { platformAuthenticatorIsAvailable } from './platformAuthenticatorIsAvailable.js';
+import { toAuthenticatorAttachment } from './toAuthenticatorAttachment.js';
+import { toPublicKeyCredentialDescriptor } from './toPublicKeyCredentialDescriptor.js';
+import { WebAuthnAbortService } from './WebAuthnAbortService.js';
+import { WebAuthnError } from './webAuthnError.js';
 
 // ================================ base64URLStringToBuffer.js ================================
 /**
@@ -143,3 +154,27 @@ export type WebAuthnErrorCode =
     | 'ERROR_AUTHENTICATOR_MISSING_DISCOVERABLE_CREDENTIAL_SUPPORT' | 'ERROR_AUTHENTICATOR_MISSING_USER_VERIFICATION_SUPPORT'
     | 'ERROR_AUTHENTICATOR_PREVIOUSLY_REGISTERED' | 'ERROR_AUTHENTICATOR_NO_SUPPORTED_PUBKEYCREDPARAMS_ALG'
     | 'ERROR_AUTO_REGISTER_USER_VERIFICATION_FAILURE' | 'ERROR_PASSTHROUGH_SEE_CAUSE_PROPERTY';
+
+/**
+ *
+ * 验证器认证处理模块函数：
+ * ```js
+ * generateAuthenticationOptions(); // 生成用于身份验证器认证的参数
+ * verifyAuthenticationResponse();  // 验证用户是否合法完成了认证流程
+ * ```
+ * - 查看定义:@see {@link generateAuthenticationOptions}、{@link verifyAuthenticationResponse}
+ */
+declare module './index.js' {
+    export * from './base64URLStringToBuffer.js';
+    export * from './browserSupportsWebAuthn.js';
+    export * from './browserSupportsWebAuthnAutofill.js';
+    export * from './bufferToBase64URLString.js';
+    export * from './identifyAuthenticationError.js';
+    export * from './identifyRegistrationError.js';
+    export * from './isValidDomain.js';
+    export * from './platformAuthenticatorIsAvailable.js';
+    export * from './toAuthenticatorAttachment.js';
+    export * from './toPublicKeyCredentialDescriptor.js';
+    export * from './WebAuthnAbortService.js';
+    export * from './WebAuthnError.js';
+}
