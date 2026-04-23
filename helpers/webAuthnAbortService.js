@@ -21,10 +21,10 @@ class BaseWebAuthnAbortService {
 }
 
 /**
- * 服务单例,用于帮助确保同一时间只有一个 WebAuthn 仪式处于活动状态；
- *
- * **flun-webauthn-browser** 的使用者通常不需要使用此服务,但它可以帮助例如
- * 使用客户端路由的项目开发者更好地控制其用户体验以响应路由导航事件；
+ * 服务单例,用于确保同一时间只有一个 WebAuthn 仪式处于活动状态;
+ * **flun-webauthn-browser** 的使用者通常不需要使用此服务,但它可以帮助
+ * 使用客户端路由的项目开发者更好地控制其用户体验以响应路由导航事件;
+ * - 查看定义:@see {@link WebAuthnAbortService}
  */
 const WebAuthnAbortService = new BaseWebAuthnAbortService();
 

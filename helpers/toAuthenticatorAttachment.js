@@ -1,7 +1,8 @@
 const attachments = ['cross-platform', 'platform'];
 
 /**
- * 如果可能,将 `string` 值强制转换为已知的 `AuthenticatorAttachment` 类型
+ * 尝试将 `string` 值强制转换为已知的 `AuthenticatorAttachment` 类型
+ * - 查看定义:@see {@link toAuthenticatorAttachment}
  */
 const toAuthenticatorAttachment = attachment => {
     if (!attachment) return;

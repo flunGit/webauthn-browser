@@ -1,9 +1,8 @@
 /**
- * 将 Base64URL 编码的字符串转换为数组缓冲区;
- * 最适合在将凭据 ID 从 JSON 字符串转换为 ArrayBuffer 时使用，
+ * 将 Base64URL 编码的字符串转换为数组缓冲区; 最适合在将凭据 ID 从 JSON 字符串转换为 ArrayBuffer 时使用,
  * 例如在 allowCredentials 或 excludeCredentials 中;
- *
- * 此辅助方法与 `bufferToBase64URLString` 配对使用;
+ * 与 `bufferToBase64URLString` 配对使用;
+ * - 查看定义:@see {@link base64URLStringToBuffer}
  */
 const base64URLStringToBuffer = base64URLString => {
     // 从 Base64URL 转换为标准 Base64
@@ -22,4 +21,19 @@ const base64URLStringToBuffer = base64URLString => {
     return buffer;
 }
 
-export { base64URLStringToBuffer };
+/**
+ * 将给定的数组缓冲区转换为 Base64URL 编码的字符串;适用于将各种凭证响应的 ArrayBuffer
+ * 转换为字符串,以便作为 JSON 发送回服务器;
+ * 与 `base64URLStringToBuffer` 搭配使用
+ * - 查看定义:@see {@link bufferToBase64URLString}
+ */
+const bufferToBase64URLString = buffer => {
+    const bytes = new Uint8Array(buffer);
+    let str = '';
+    for (const charCode of bytes) str += String.fromCharCode(charCode);
+
+    const base64String = btoa(str);
+    return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+
+export { base64URLStringToBuffer, bufferToBase64URLString };

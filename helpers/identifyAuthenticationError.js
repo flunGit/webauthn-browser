@@ -2,7 +2,8 @@ import { isValidDomain } from './isValidDomain.js';
 import { WebAuthnError } from './webAuthnError.js';
 
 /**
- * 尝试推断调用 `navigator.credentials.get()` 后引发错误的原因
+ * 尝试推断调用 `navigator.credentials.get()` 后引发错误的原因;
+ * - 查看定义:@see {@link identifyAuthenticationError}
  */
 const identifyAuthenticationError = ({ error, options }) => {
     const { publicKey } = options;

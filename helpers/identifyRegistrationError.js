@@ -3,6 +3,7 @@ import { WebAuthnError } from './webAuthnError.js';
 
 /**
  * 尝试推断调用 `navigator.credentials.create()` 后引发错误的原因
+ * - 查看定义:@see {@link identifyRegistrationError}
  */
 const identifyRegistrationError = ({ error, options }) => {
     const { publicKey } = options;

@@ -2,13 +2,14 @@ import { browserSupportsWebAuthn } from './browserSupportsWebAuthn.js';
 
 /**
  * 使得在测试期间可以模拟返回值
+ * - 查看定义:@see {@link  _browserSupportsWebAuthnAutofillInternals}
  * @ignore 不要将其包含在文档输出中
  */
 const _browserSupportsWebAuthnAutofillInternals = { stubThis: value => value };
 
 /**
- * 判断浏览器是否支持条件式 UI，以便可以在浏览器典型的密码自动填充弹出窗口中
- * 向用户显示 WebAuthn 凭证；
+ * 判断浏览器是否支持条件式 UI,以便在浏览器的密码填充弹窗中向用户显示 WebAuthn 凭证;
+ * - 查看定义:@see {@link browserSupportsWebAuthnAutofill}
  */
 const browserSupportsWebAuthnAutofill = () => {
     if (!browserSupportsWebAuthn())
