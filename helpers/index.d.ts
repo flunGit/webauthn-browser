@@ -17,7 +17,7 @@ import { WebAuthnError } from './webAuthnError.js';
  * base64URLStringToBuffer(); // 将 Base64URL 编码的字符串转换为 Array Buffer;
  * bufferToBase64URLString(); // 将给定的数组缓冲区转换为 Base64URL 编码的字符串;
  * ```
- * - 查看定义:@see {@link base64URLStringToBuffer}、{@link bufferToBase64URLString}
+ * >查看定义:@see {@link base64URLStringToBuffer}、{@link bufferToBase64URLString}
  */
 declare module './base64urlAndBuffer.js' {
     export * from './base64urlAndBuffer.js';
@@ -30,7 +30,7 @@ declare module './base64urlAndBuffer.js' {
  * const _browserSupportsWebAuthnInternals={}; // 测试期间对返回值进行桩（stub）处理
  * browserSupportsWebAuthn();                  // 判断当前浏览器是否支持 WebAuthn
  * ```
- * - 查看定义:@see {@link _browserSupportsWebAuthnInternals}、{@link browserSupportsWebAuthn}
+ * >查看定义:@see {@link _browserSupportsWebAuthnInternals}、{@link browserSupportsWebAuthn}
  */
 declare module './browserSupportsWebAuthn.js' {
     export * from './browserSupportsWebAuthn.js';
@@ -43,7 +43,7 @@ declare module './browserSupportsWebAuthn.js' {
  * const _browserSupportsWebAuthnAutofillInternals={}; // 测试期间模拟返回值;
  * browserSupportsWebAuthnAutofill();                  // 判断浏览器是否支持条件式UI;
  * ```
- * - 查看定义:@see {@link  _browserSupportsWebAuthnAutofillInternals}、{@link browserSupportsWebAuthnAutofill}
+ * >查看定义:@see {@link  _browserSupportsWebAuthnAutofillInternals}、{@link browserSupportsWebAuthnAutofill}
  */
 declare module './browserSupportsWebAuthnAutofill.js' {
     export * from './browserSupportsWebAuthnAutofill.js';
@@ -55,7 +55,7 @@ declare module './browserSupportsWebAuthnAutofill.js' {
  * // 文件导出内容
  * identifyAuthenticationError(); // 尝试推断调用 `navigator.credentials.get()` 后引发错误的原因;
  * ```
- * - 查看定义:@see {@link identifyAuthenticationError}
+ * >查看定义:@see {@link identifyAuthenticationError}
  */
 declare module './identifyAuthenticationError.js' {
     export * from './identifyAuthenticationError.js';
@@ -67,7 +67,7 @@ declare module './identifyAuthenticationError.js' {
  * // 文件导出内容
  * identifyRegistrationError(); // 尝试推断调用 `navigator.credentials.create()` 后引发错误的原因;
  * ```
- * - 查看定义:@see {@link identifyRegistrationError}
+ * >查看定义:@see {@link identifyRegistrationError}
  */
 declare module './identifyRegistrationError.js' {
     export * from './identifyRegistrationError.js';
@@ -79,7 +79,7 @@ declare module './identifyRegistrationError.js' {
  * // 文件导出内容
  * isValidDomain(); // 判断主机名是否符合验证规范;
  * ```
- * - 查看定义:@see {@link isValidDomain}
+ * >查看定义:@see {@link isValidDomain}
  */
 declare module './isValidDomain.js' {
     export * from './isValidDomain.js';
@@ -91,7 +91,7 @@ declare module './isValidDomain.js' {
  * // 文件导出内容
  * platformAuthenticatorIsAvailable(); // 判断浏览器是否能够与内置身份验证器通信;
  * ```
- * - 查看定义:@see {@link platformAuthenticatorIsAvailable}
+ * >查看定义:@see {@link platformAuthenticatorIsAvailable}
  */
 declare module './platformAuthenticatorIsAvailable.js' {
     export * from './platformAuthenticatorIsAvailable.js';
@@ -103,7 +103,7 @@ declare module './platformAuthenticatorIsAvailable.js' {
  * // 文件导出内容
  * toAuthenticatorAttachment(); // 尝试将 `string` 值强制转换为已知的 `AuthenticatorAttachment` 类型
  * ```
- * - 查看定义:@see {@link toAuthenticatorAttachment}
+ * >查看定义:@see {@link toAuthenticatorAttachment}
  */
 declare module './toAuthenticatorAttachment.js' {
     export * from './toAuthenticatorAttachment.js';
@@ -115,7 +115,7 @@ declare module './toAuthenticatorAttachment.js' {
  * // 文件导出内容
  * toPublicKeyCredentialDescriptor(); // 将描述符中的 Base64URL 字符串 `id` 转换为 ArrayBuffer,以适配 WebAuthn API;
  * ```
- * - 查看定义:@see {@link toPublicKeyCredentialDescriptor}
+ * >查看定义:@see {@link toPublicKeyCredentialDescriptor}
  */
 declare module './toPublicKeyCredentialDescriptor.js' {
     export * from './toPublicKeyCredentialDescriptor.js';
@@ -127,7 +127,7 @@ declare module './toPublicKeyCredentialDescriptor.js' {
  * // 文件导出内容
  * const WebAuthnAbortService = new BaseWebAuthnAbortService(); // 服务单例,用于确保同一时间只有一个 WebAuthn 仪式处于活动状态;
  * ```
- * - 查看定义:@see {@link WebAuthnAbortService}
+ * >查看定义:@see {@link WebAuthnAbortService}
  */
 declare module './webAuthnAbortService.js' {
     export * from './webAuthnAbortService.js';
@@ -139,7 +139,7 @@ declare module './webAuthnAbortService.js' {
  * // 文件导出内容
  * class WebAuthnError{}; // 自定义错误,用于更细致地说明规范中八种错误被抛出的原因;
  * ```
- * - 查看定义:@see {@link WebAuthnError}
+ * >查看定义:@see {@link WebAuthnError}
  */
 declare module './webAuthnError.js' {
     export type WebAuthnErrorCode =

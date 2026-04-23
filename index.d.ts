@@ -25,17 +25,12 @@ import { startAuthentication, startRegistration } from './methods/index.js';
  *
  * class WebAuthnError{};                              // 自定义错误,用于更细致地说明规范中八种错误被抛出的原因;
  * ```
- * - 查看定义:@see
- *
- * > 登录和注册处理: {@link startAuthentication}、{@link startRegistration}
- *
- * > 工具:
- * >> {@link _browserSupportsWebAuthnInternals}、{@link _browserSupportsWebAuthnAutofillInternals}、{@link WebAuthnAbortService}
- *
- * >> {@link base64URLStringToBuffer}、{@link bufferToBase64URLString}、 {@link browserSupportsWebAuthn}、
- * {@link browserSupportsWebAuthnAutofill}、{@link platformAuthenticatorIsAvailable}、
- *
- * >> {@link WebAuthnError}
+ * >查看定义:@see
+ *- 登录和注册处理: {@link startAuthentication}、{@link startRegistration}
+ *- 工具: {@link _browserSupportsWebAuthnInternals}、{@link _browserSupportsWebAuthnAutofillInternals}、{@link WebAuthnAbortService}、
+ * {@link base64URLStringToBuffer}、{@link bufferToBase64URLString}、 {@link browserSupportsWebAuthn}、
+ * {@link browserSupportsWebAuthnAutofill}、{@link platformAuthenticatorIsAvailable}
+ * >{@link WebAuthnError}
  */
 declare module './index.js' {
     export {
