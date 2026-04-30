@@ -7,7 +7,7 @@ import {
  * 通过 WebAuthn 断言开始身份验证器“登录”
  * - 查看定义:@see {@link startAuthentication}
  * @param {Object} options - 配置选项
- * @param {Object} options.optionsJSON - 来自 **flun-webauthn-server** 的 `generateAuthenticationOptions()` 的输出
+ * @param {Object} options.optionsJSON - 来自 **@flun/webauthn-server** 的 `generateAuthenticationOptions()` 的输出
  * @param {boolean} [options.useBrowserAutofill=false] - 初始化条件式 UI,以支持通过浏览器自动填充提示进行登录
  * @param {boolean} [options.verifyBrowserAutofillInput=true] - 当 `useBrowserAutofill` 为 `true` 时,确保存在合适的 `<input>` 元素
  * @returns {Promise<{

@@ -8,7 +8,7 @@ import {
  * - 查看定义:@see {@link startRegistration}
  *
  * @param {Object} options - 配置选项
- * @param {PublicKeyCredentialCreationOptionsJSON} options.optionsJSON - 来自 **flun-webauthn-server** 的 `generateRegistrationOptions()` 的输出
+ * @param {PublicKeyCredentialCreationOptionsJSON} options.optionsJSON - 来自 **@flun/webauthn-server** 的 `generateRegistrationOptions()` 的输出
  * @param {boolean} [options.useAutoRegister] - 尝试静默使用用户刚刚登录的密码管理器创建一个通行密钥,默认为 `false`
  * @returns {Promise<{
  *   id: string,

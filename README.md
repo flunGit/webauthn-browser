@@ -1,9 +1,9 @@
-# flun-webauthn-browser <!-- omit in toc -->
+# @flun/webauthn-browser <!-- omit in toc -->
 
 ![WebAuthn](https://img.shields.io/badge/WebAuthn-Browser_Simplified-blueviolet?style=for-the-badge&logo=WebAuthn)
-[![npm (scoped)](https://img.shields.io/npm/v/flun-webauthn-browser?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/flun-webauthn-browser)
+[![npm (scoped)](https://img.shields.io/npm/v/@flun/webauthn-browser?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@flun/webauthn-browser)
 
-**flun-webauthn-browser** 是一个专为浏览器环境设计的 WebAuthn（含 Passkeys）前端工具库,基于 [@simplewebauthn/browser](https://simplewebauthn.dev/) 核心逻辑重构并增强,它封装了 `navigator.credentials` API 的复杂细节,提供简洁的 Promise 风格接口,并内置了丰富的错误处理与 Base64URL 编解码工具;
+**@flun/webauthn-browser** 是一个专为浏览器环境设计的 WebAuthn（含 Passkeys）前端工具库,基于 [@simplewebauthn/browser](https://simplewebauthn.dev/) 核心逻辑重构并增强,它封装了 `navigator.credentials` API 的复杂细节,提供简洁的 Promise 风格接口,并内置了丰富的错误处理与 Base64URL 编解码工具;
 
 本包以 **ESM** 编写,同时提供 **UMD** 打包产物,可通过 npm 模块方式或 `<script>` 全局方式引入,兼容现代浏览器及部分旧版环境;
 
@@ -34,7 +34,7 @@
   - [内部调试工具](#内部调试工具)
 - [错误处理](#错误处理)
 - [前后端集成示例](#前后端集成示例)
-  - [配合 flun-webauthn-server](#配合-flun-webauthn-server)
+  - [配合 @flun/webauthn-server](#配合-flunwebauthn-server)
 - [许可证](#许可证)
 - [相关链接](#相关链接)
 
@@ -47,17 +47,17 @@
 适用于使用打包工具（Webpack、Vite、Rollup 等）或 Node.js ≥ 22.12.0 的环境;
 
 ```sh
-npm i flun-webauthn-browser
+npm i @flun/webauthn-browser
 ```
 
 然后在代码中按需导入：
 
 ```js
 // ES Module
-import { startRegistration, startAuthentication } from 'flun-webauthn-browser';
+import { startRegistration, startAuthentication } from '@flun/webauthn-browser';
 
 // CommonJS (Node.js ≥ 22.12.0)
-const { startRegistration, startAuthentication } = require('flun-webauthn-browser');
+const { startRegistration, startAuthentication } = require('@flun/webauthn-browser');
 ```
 
 ### UMD 全局方式
@@ -69,13 +69,13 @@ const { startRegistration, startAuthentication } = require('flun-webauthn-browse
 #### ES2021（推荐用于现代浏览器）
 
 ```html
-<script src="https://unpkg.com/flun-webauthn-browser/dist/index.js"></script>
+<script src="https://unpkg.com/@flun/webauthn-browser/dist/index.js"></script>
 ```
 
 #### ES5（包含 polyfill，支持 IE11 / 旧版 Edge）
 
 ```html
-<script src="https://unpkg.com/flun-webauthn-browser/dist/index.es5.js"></script>
+<script src="https://unpkg.com/@flun/webauthn-browser/dist/index.es5.js"></script>
 ```
 
 ---
@@ -109,7 +109,7 @@ const { startRegistration, startAuthentication } = require('flun-webauthn-browse
 ### 模块方式使用示例
 
 ```js
-import { startRegistration, startAuthentication } from 'flun-webauthn-browser';
+import { startRegistration, startAuthentication } from '@flun/webauthn-browser';
 
 // 注册
 async function register(username) {
@@ -151,7 +151,7 @@ async function login(username) {
 在 HTML 页面中引入 UMD 脚本后，即可通过全局变量 `flunWebAuthnBrowser` 调用所有方法。
 
 ```html
-<script src="https://unpkg.com/flun-webauthn-browser/dist/index.js"></script>
+<script src="https://unpkg.com/@flun/webauthn-browser/dist/index.js"></script>
 <script>
   (async () => {
     // 1. 首先检测浏览器是否支持 WebAuthn
@@ -456,7 +456,7 @@ flunWebAuthnBrowser.WebAuthnAbortService.cancelCeremony();
 推荐使用 `try...catch` 捕获 `WebAuthnError` 并根据 `code` 进行差异化处理。
 
 ```js
-import { startAuthentication, WebAuthnError } from 'flun-webauthn-browser';
+import { startAuthentication, WebAuthnError } from '@flun/webauthn-browser';
 
 try {
   const response = await startAuthentication({ optionsJSON });
@@ -483,14 +483,14 @@ try {
 
 ## 前后端集成示例
 
-### 配合 flun-webauthn-server
+### 配合 @flun/webauthn-server
 
-以下是一个完整的最小化集成示例，前端使用本库，后端使用 [`flun-webauthn-server`](https://www.npmjs.com/package/flun-webauthn-server)。
+以下是一个完整的最小化集成示例，前端使用本库，后端使用 [`@flun/webauthn-server`](https://www.npmjs.com/package/@flun/webauthn-server)。
 
 **前端代码**
 
 ```js
-import {  startRegistration,  startAuthentication,  browserSupportsWebAuthn} from 'flun-webauthn-browser';
+import {  startRegistration,  startAuthentication,  browserSupportsWebAuthn} from '@flun/webauthn-browser';
 
 async function register(username) {
   // 1. 请求注册选项
@@ -529,12 +529,12 @@ async function login(username) {
 }
 ```
 
-**后端代码片段**（基于 Express + `flun-webauthn-server`）
+**后端代码片段**（基于 Express + `@flun/webauthn-server`）
 
 ```js
 import {
   generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse
-} from 'flun-webauthn-server';
+} from '@flun/webauthn-server';
 
 app.post('/api/register/begin', async (req, res) => {
   const { username } = req.body, user = getUser(username),
@@ -577,7 +577,7 @@ ISC © [flun](https://github.com/flunGit)
 
 ## 相关链接
 
-- [GitHub 仓库](https://github.com/flunGit/flun-webauthn-browser)
-- [npm 包页面](https://www.npmjs.com/package/flun-webauthn-browser)
-- [配套后端库 flun-webauthn-server](https://www.npmjs.com/package/flun-webauthn-server)
+- [GitHub 仓库](https://github.com/flunGit/@flun/webauthn-browser)
+- [npm 包页面](https://www.npmjs.com/package/@flun/webauthn-browser)
+- [配套后端库 @flun/webauthn-server](https://www.npmjs.com/package/@flun/webauthn-server)
 - [W3C WebAuthn 规范](https://w3c.github.io/webauthn/)
