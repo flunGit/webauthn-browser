@@ -1,6 +1,6 @@
 .git/
 .gitignore
-publish.ps1
+*.ps1
 
 .vscode/
 .github/
