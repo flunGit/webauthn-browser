@@ -1,9 +1,13 @@
 .git/
 .gitignore
+.github/
+.vscode/
+.idea/
+.npmrc
 node_modules/
 *.ps1
-
-.vscode/
-.github/
+*.bak
+*.tgz
+*.tar.gz
 package-lock.json
 维护.md
